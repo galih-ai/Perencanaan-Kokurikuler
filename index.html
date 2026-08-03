@@ -3,78 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Perencanaan Kokurikuler</title>
+  <title>Membuka Aplikasi</title>
 
   <style>
-    html, body {
+    html,
+    body {
       margin: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-      background: #f4f4f9;
-    }
-
-    #landing-page {
-      display: flex;
-      height: 100%;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    button {
-      background: #4285f4;
-      color: #fff;
-      border: 0;
-      border-radius: 8px;
-      padding: 15px 30px;
-      font-size: 18px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    button:active {
-      transform: translateY(1px);
-      filter: brightness(.92);
-    }
-
-    iframe {
-      display: none;
-      width: 100%;
-      height: 100%;
-      border: 0;
+      background: #0b2545;
     }
   </style>
 </head>
+
 <body>
-  <div id="landing-page">
-    <h2>Selamat Datang</h2>
-    <p>di Perencanaan Kokurikuler</p>
-    <button type="button" onclick="bukaAplikasi()">Buka Aplikasi</button>
-  </div>
-
-  <iframe id="app-frame" title="Perencanaan Kokurikuler"></iframe>
-
   <script>
-    const APP_URL = 'https://script.google.com/macros/s/AKfycbxq1cYwYZa81dsU960skqqoHq_gPnIbSbaBYhi4Qs_JkLUzN8iJnZh7gzahMpPpmZH8/exec';
+    const APP_URL =
+      'https://script.google.com/macros/s/AKfycbxq1cYwYZa81dsU960skqqoHq_gPnIbSbaBYhi4Qs_JkLUzN8iJnZh7gzahMpPpmZH8/exec';
 
-    function bukaAplikasi() {
-      const token = new URLSearchParams(window.location.search).get('token');
-
-      if (!token) {
-        alert('Akses aplikasi harus dibuka melalui landing page.');
-        return;
-      }
-
-      const landing = document.getElementById('landing-page');
-      const iframe = document.getElementById('app-frame');
-
-      iframe.src = APP_URL + '?token=' + encodeURIComponent(token);
-      landing.style.display = 'none';
-      iframe.style.display = 'block';
-    }
+    window.location.replace(APP_URL);
   </script>
 </body>
 </html>
